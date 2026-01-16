@@ -1,4 +1,4 @@
-# project title
+# Project title
 Personal Protfolio Website
 
 # Project Description
@@ -8,8 +8,8 @@ The website showcases my basic information, skills, and contact details.
 # Technologies Used
 HTML5
 
-## Project Structure
-# Features
+# Project Structure
+## Features
 Proper HTML5 structure
 Semantic HTML tags (header, nav, section)
 Navigation links (About, Skills, Contact)
@@ -34,6 +34,6 @@ You can reach me using the *contact form* provided on the website.
 Beginner Level Completed
 Done with 1st week 
 
-## Website preview
-# it include about,skills and contact section
+# Website preview
+## Tt include about,skills and contact section with simple protofolio website
 <img width="969" height="990" alt="website" src="https://github.com/user-attachments/assets/29b1f9b9-f58c-4852-8cfe-d9d59b7ac0c9" />
