@@ -35,5 +35,5 @@ Beginner Level Completed
 Done with 1st week 
 
 # Website preview
-## Tt include about,skills and contact section with simple protofolio website
+## It include about,skills and contact section with simple protofolio website
 <img width="969" height="990" alt="website" src="https://github.com/user-attachments/assets/29b1f9b9-f58c-4852-8cfe-d9d59b7ac0c9" />
