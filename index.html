@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>My Portfolio</title>
-    <link< rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -46,18 +46,25 @@
 
     <section id="Contact">
         <h2>Contact Details</h2>
-        <form>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+        <form onsubmit="return validateForm(event)">
+
         <label>Name:</label><br>
-        <input type="text" required><br>
+        <input type="text" id="name"><br><br>
 
         <label>Email:</label><br>
-        <input type="email" required><br>
+        <input type="text" id="email"><br><br>
 
         <label>Message:</label><br>
-        <textarea required></textarea><br>
+        <textarea id="message"></textarea><br><br>
 
         <button type="submit">Send</button>
-        </form>
+    </form>
+
+    <p id="error" class="error"></p>
+    <p id="success" class="success"></p>
+       
     </section>
 
     <footer>
@@ -67,4 +74,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
