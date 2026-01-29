@@ -1,43 +1,43 @@
 function validateForm(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-  if (!email.includes("@")) {
-    showError("Please enter a valid email address");
-    return false;
-  }
+    document.getElementById("error").innerText = "";
+    document.getElementById("success").innerText = "";
 
-  if (message.length < 10) {
-    showError("Message must be at least 10 characters");
-    return false;
-  }
+    if (!email.includes("@")) {
+        showError("Please enter a valid email address");
+        return false;
+    }
 
-  showSuccess("Message sent successfully!");
-  return true;
+    if (message.length < 10) {
+        showError("Message must be at least 10 characters");
+        return false;
+    }
+
+    showSuccess("Message sent successfully!");
+    return true;
 }
 
-function showError(text) {
-  alert(text);
+function showError(msg) {
+    document.getElementById("error").innerText = msg;
 }
 
-function showSuccess(text) {
-  alert(text);
+function showSuccess(msg) {
+    document.getElementById("success").innerText = msg;
 }
 
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode");
 
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("darkMode", "enabled");
-  } else {
-    localStorage.setItem("darkMode", "disabled");
-  }
+    localStorage.setItem(
+        "darkMode",
+        document.body.classList.contains("dark-mode")
+    );
 }
 
-window.onload = function () {
-  if (localStorage.getItem("darkMode") === "enabled") {
+if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark-mode");
-  }
-};
+}
