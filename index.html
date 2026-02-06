@@ -1,76 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Product Landing Page</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
+<header class="navbar">
+  <h1 class="logo">ShopNow</h1>
+  <nav>
+    <a href="#product">Product</a>
+    <a href="#features">Features</a>
+    <a href="#buy">Buy</a>
+    <span class="cart"> Cart: <span id="cartCount">0</span></span>
+  </nav>
+</header>
 
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Smart Watch Pro</h2>
+    <p>Best smartwatch for fitness & daily use.</p>
+    <h3>₹<span id="price">2999</span></h3>
 
-        </nav>
-        <h1>Meghana Hiremath</h1>
-    </header>
-
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-           My name is Meghana Hiremath!.
-           I am a 3rd year Computer Science Engineering student.
-           I'm quick learner, positive, and hardworking. And
-           I'm interested in web design and software development.
-        </p>
-    </section>
-    
-    <div class="left-section">
-       <img src="image/profile.jpeg" alt="profile picture" width="150">
-       <br>
-       <br>
-       <a href="https://github.com/Meghu705/project.git">My Github</a>
+    <div class="quantity">
+      <button onclick="decreaseQty()">-</button>
+      <span id="quantity">1</span>
+      <button onclick="increaseQty()">+</button>
     </div>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-            <li>HTML</li>
-            <li>C-Prog.</li>
-            <li>Python basics</li>
-            <li>Power BI</li>
-            <li>Mongodb</li>
-    </section>
+    <button class="btn" onclick="addToCart()">Add to Cart</button>
+    <button class="btn" onclick="buyNow()">Buy Now</button>
+  </div>
 
-    <section id="Contact">
-        <h2>Contact Details</h2>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <img id="productImg" src="Product.jpeg" alt="Product Image">
+</section>
 
-        <form onsubmit="return validateForm(event)">
+<section id="features" class="section features">
+  <h2>Features</h2>
+  <ul>
+    <li>Heart Rate Monitor</li>
+    <li>Water Resistant</li>
+    <li>Bluetooth Calling</li>
+    <li>7 Days Battery</li>
+  </ul>
 
-        <label>Name:</label><br>
-        <input type="text" id="name"><br><br>
+  <button class="btn" onclick="changeImage()">Change Product View</button>
+</section>
 
-        <label>Email:</label><br>
-        <input type="text" id="email"><br><br>
+<footer>
+  <p>© 2026 ShopNow. All rights reserved.</p>
+</footer>
 
-        <label>Message:</label><br>
-        <textarea id="message"></textarea><br><br>
-
-        <button type="submit">Send</button>
-    </form>
-
-    <p id="error" class="error"></p>
-    <p id="success" class="success"></p>
-       
-    </section>
-
-    <footer>
-        <p>Meghana Hiremath--2026</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

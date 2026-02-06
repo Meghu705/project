@@ -1,43 +1,41 @@
-function validateForm(event) {
-    event.preventDefault();
+let quantity = 1;
+let pricePerItem = 2999;
+let cartCount = 0;
 
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    document.getElementById("error").innerText = "";
-    document.getElementById("success").innerText = "";
-
-    if (!email.includes("@")) {
-        showError("Please enter a valid email address");
-        return false;
-    }
-
-    if (message.length < 10) {
-        showError("Message must be at least 10 characters");
-        return false;
-    }
-
-    showSuccess("Message sent successfully!");
-    return true;
+function increaseQty() {
+  quantity++;
+  document.getElementById("quantity").innerText = quantity;
+  updatePrice();
 }
 
-function showError(msg) {
-    document.getElementById("error").innerText = msg;
+function decreaseQty() {
+  if (quantity > 1) {
+    quantity--;
+    document.getElementById("quantity").innerText = quantity;
+    updatePrice();
+  }
 }
 
-function showSuccess(msg) {
-    document.getElementById("success").innerText = msg;
+function updatePrice() {
+  document.getElementById("price").innerText = pricePerItem * quantity;
 }
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-
-    localStorage.setItem(
-        "darkMode",
-        document.body.classList.contains("dark-mode")
-    );
+function addToCart() {
+  cartCount += quantity;
+  document.getElementById("cartCount").innerText = cartCount;
+  alert("Added " + quantity + " item(s) to cart!");
 }
 
-if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
+function buyNow() {
+  let total = pricePerItem * quantity;
+  alert("Thank you for your purchase!\nTotal Amount: ₹" + total);
+}
+
+function changeImage() {
+  let img = document.getElementById("productImg");
+  if (img.src.includes("Product.jpeg")) {
+    img.src = "Product1.jpeg";
+  } else {
+    img.src = "Product.jpeg";
+  }
 }
